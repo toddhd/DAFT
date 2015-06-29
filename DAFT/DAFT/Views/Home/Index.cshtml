@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>DAFT - Diabetes and Food Tracking</h1>
+    <p class="lead">
+        Tired of entering your food in one application, your blood sugar in another application, and your exercise in yet another?
+        DAFT lets you track all your vital information in one place, and associate the information in a meaningful way, so that you
+        know what works for you, and what doesn't. Diabetes is tough enough. Tracking it shouldn't be.
+    </p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Complete your profile so that DAFT can get to know you better, help you to set some goals, and setup tracking that makes sense for you and your lifestyle.
+        </p>
+        <p>
+            <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get Tracking!</h2>
+        <p>DAFT lets you track your food, your exercise, your glucose and more! Let's get started now, it's easy and fun!.</p>
+        <p>
+            <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>View Your Results</h2>
+        <p>View graphs and charts that not only let you see what you've tracked, but also how they relate to each other, as well as what works and what doesn't.</p>
+        <p>
+            <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" ng-controller="appCtrl">
+        <input type="text" ng-model="asyncSelected" placeholder="Locations loaded via $http" typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" class="form-control">
+        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+
+        //$scope.getLocation = function (val) {
+        //    var postObject = new Object();
+        //    postObject.appId = "35d51d50";
+        //    postObject.appKey = "d19943f980aa9d4cd5fd932ac4b99fb7";
+        //    postObject.query = val; //"cheddar cheese"
+        //    postObject.fields = "item_name,brand_name";
+
+        //    $http.post("https://api.nutritionix.com/v1_1/search/", postObject)
+        //        .success(function (data) {
+        //            var test = data;
+        //        })
+        //        .then(function (response) {
+        //        return response.data.results.map(function (item) {
+        //            return item.hits[0].fields.item_name;
+        //        });
+        //    });
+        //};
+
+
+
+        //// Any function returning a promise object can be used to load values asynchronously
+        //$scope.getLocation = function (val) {
+        //    return $http.get('https://api.nutritionix.com/v1_1/search/cheddar%20cheese?fields=item_name&appId=35d51d50&appKey=d19943f980aa9d4cd5fd932ac4b99fb7', {
+        //        //params: {
+        //        //    address: val,
+        //        //    sensor: false
+        //        //}
+        //    }).then(function (response) {
+        //        return response.data.results.map(function (item) {
+        //            return item.formatted_address;
+        //        });
+        //    });
+        //};
+    </script>
+}
